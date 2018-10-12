@@ -23,3 +23,6 @@ class D(B):
 
 class E(C,D):
     pass
+
+e=E()
+print(e.__class__)
