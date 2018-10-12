@@ -11,8 +11,7 @@ import inspect
 """
 
 class A(object):
-    def eat(self):
-        pass
+    pass
 
 
 class B(A):
@@ -28,4 +27,14 @@ class E(C,D):
     pass
 
 
+'''
+E->D->C->B->A
+L(E(C,D)) = E + merge(L(C) ,L(D) ,(CD))
+          = E + merge(DC,CB,BA)
+          = E + D + merge(CB,BA,A)
+          = E + D + C + merge(B,BA,A)
+          = E + D + C + B + merge(A,A)
+          = E -> B -> C ->D ->A
+'''
 print(inspect.getmro(E))
+
