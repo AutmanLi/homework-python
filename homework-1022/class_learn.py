@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+import inspect
 """
 @version: ??
 @author: autmanli
@@ -10,7 +11,9 @@
 """
 
 class A(object):
-    pass
+    def eat(self):
+        pass
+
 
 class B(A):
     pass
@@ -24,5 +27,5 @@ class D(B):
 class E(C,D):
     pass
 
-e=E()
-print(e.__class__)
+
+print(inspect.getmro(E))
